@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Producto {
     @Id
     @Column(name = "codigo_producto")
-    private int codigo_producto;
+    private String codigo_producto;
 
     @Column(name = "nombre")
     private String nombre_producto;
@@ -38,7 +38,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int codigo_producto, String nombre_producto, String gama, String dimensiones, String proveedor,
+    public Producto(String codigo_producto, String nombre_producto, String gama, String dimensiones, String proveedor,
             String descripcion, int cantidad_en_stock, float precio_venta, float precio_proveedor) {
         this.codigo_producto = codigo_producto;
         this.nombre_producto = nombre_producto;
@@ -51,11 +51,11 @@ public class Producto {
         this.precio_proveedor = precio_proveedor;
     }
 
-    public int getCodigo_producto() {
+    public String getCodigo_producto() {
         return codigo_producto;
     }
 
-    public void setCodigo_producto(int codigo_producto) {
+    public void setCodigo_producto(String codigo_producto) {
         this.codigo_producto = codigo_producto;
     }
 

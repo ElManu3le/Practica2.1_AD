@@ -14,6 +14,7 @@ public class ProductosDAO implements Dao<Producto> {
 
     Session session;
     Producto productoDAO = new Producto();
+    String id;
 
     @Override
     public Producto get(long id) {
@@ -92,9 +93,9 @@ public class ProductosDAO implements Dao<Producto> {
 
         System.out.println("Dime el id del producto para modificarlo");
 
-        productoUpdate = session.find(Producto.class, Leer.pedirCadena());
+        productoUpdate = session.find(Producto.class, id = Leer.pedirCadena());
 
-        session.load(Producto.class, session);
+        session.load(Producto.class, id);
 
         System.out.println("Nuevo nombre del producto");
         productoUpdate.setNombre_producto(Leer.pedirCadena());
@@ -136,8 +137,12 @@ public class ProductosDAO implements Dao<Producto> {
         System.out.println("Nuevo precio de proveedor del producto: ");
         productoUpdate.setPrecio_proveedor(Leer.pedirFloat());
 
+        session.beginTransaction();
+        session.evict(productoUpdate);
         session.update(productoUpdate);
-        transaction.commit();
+        session.getTransaction().commit();
+
+        //transaction.commit();
         System.out.println("Producto actualizado");
 
     }

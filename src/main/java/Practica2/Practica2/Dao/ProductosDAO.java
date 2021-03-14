@@ -39,50 +39,49 @@ public class ProductosDAO implements Dao<Producto> {
 
     @Override
     public void save(Producto t) throws Exception {
-        /*session = HibernateUtil.geeSession();
-
-        productoDAO = new Producto();
-
-        System.out.println("Codigo del producto");
-        int codigo_producto = Leer.pedirEnteroValidar();
-
-        System.out.println("Dime el nombre del producto");
-        String nombre_producto = Leer.pedirCadena();
-
-        System.out.println("Dime la gamma del producto");
-        String gama = Leer.pedirCadena();
-
-        System.out.println("Dime las dimensiones del producto");
-        String dimensiones = Leer.pedirCadena();
-
-        System.out.println("Dime el proveedor");
-        String proveedor = Leer.pedirCadena();
-
-        System.out.println("Dime una descripcion");
-        String descripcion = Leer.pedirCadena();
-
-        System.out.println("Dime la cantidad de Stock");
-        int cantidad_en_stock = Leer.pedirEnteroValidar();
-
-        System.out.println("Dime los comentarios");
-        Float precio_venta = Leer.pedirFloat();
-
-        System.out.println("Dime el precio del proveedor");
-        Float precio_proveedor = Leer.pedirFloat();
-
-        productoDAO.setCodigo_producto(codigo_producto);
-        productoDAO.setNombre_producto(nombre_producto);
-        productoDAO.setGama(gama);
-        productoDAO.setDimensiones(dimensiones);
-        productoDAO.setProveedor(proveedor);
-        productoDAO.setDescripcion(descripcion);
-        productoDAO.setCantidad_en_stock(cantidad_en_stock);
-        productoDAO.setPrecio_venta(precio_venta);
-        productoDAO.setPrecio_proveedor(precio_proveedor);
-
-        session.getTransaction().begin();
-        session.persist(productoDAO);
-        session.getTransaction().commit();*/
+        /*
+         * session = HibernateUtil.geeSession();
+         * 
+         * productoDAO = new Producto();
+         * 
+         * System.out.println("Codigo del producto"); int codigo_producto =
+         * Leer.pedirEnteroValidar();
+         * 
+         * System.out.println("Dime el nombre del producto"); String nombre_producto =
+         * Leer.pedirCadena();
+         * 
+         * System.out.println("Dime la gamma del producto"); String gama =
+         * Leer.pedirCadena();
+         * 
+         * System.out.println("Dime las dimensiones del producto"); String dimensiones =
+         * Leer.pedirCadena();
+         * 
+         * System.out.println("Dime el proveedor"); String proveedor =
+         * Leer.pedirCadena();
+         * 
+         * System.out.println("Dime una descripcion"); String descripcion =
+         * Leer.pedirCadena();
+         * 
+         * System.out.println("Dime la cantidad de Stock"); int cantidad_en_stock =
+         * Leer.pedirEnteroValidar();
+         * 
+         * System.out.println("Dime los comentarios"); Float precio_venta =
+         * Leer.pedirFloat();
+         * 
+         * System.out.println("Dime el precio del proveedor"); Float precio_proveedor =
+         * Leer.pedirFloat();
+         * 
+         * productoDAO.setCodigo_producto(codigo_producto);
+         * productoDAO.setNombre_producto(nombre_producto); productoDAO.setGama(gama);
+         * productoDAO.setDimensiones(dimensiones); productoDAO.setProveedor(proveedor);
+         * productoDAO.setDescripcion(descripcion);
+         * productoDAO.setCantidad_en_stock(cantidad_en_stock);
+         * productoDAO.setPrecio_venta(precio_venta);
+         * productoDAO.setPrecio_proveedor(precio_proveedor);
+         * 
+         * session.getTransaction().begin(); session.persist(productoDAO);
+         * session.getTransaction().commit();
+         */
 
     }
 
@@ -93,21 +92,10 @@ public class ProductosDAO implements Dao<Producto> {
 
         System.out.println("Dime el id del producto para modificarlo");
 
-        try {
-            productoUpdate = session.find(Producto.class, Leer.pedirCadena());
+        productoUpdate = session.find(Producto.class, Leer.pedirCadena());
 
-            System.out.println(productoUpdate.getCodigo_producto());
+        session.load(Producto.class, session);
 
-            
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
-
-        productoUpdate = session.load(Producto.class, session);
-
-        // PEDIMOS LOS DATOS PARA ACTUALIZAR EL PRODUCTO
         System.out.println("Nuevo nombre del producto");
         productoUpdate.setNombre_producto(Leer.pedirCadena());
 

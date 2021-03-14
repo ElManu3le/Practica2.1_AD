@@ -95,8 +95,6 @@ public class ProductosDAO implements Dao<Producto> {
 
         productoUpdate = session.find(Producto.class, id = Leer.pedirCadena());
 
-        session.load(Producto.class, id);
-
         System.out.println("Nuevo nombre del producto");
         productoUpdate.setNombre_producto(Leer.pedirCadena());
 
@@ -137,13 +135,12 @@ public class ProductosDAO implements Dao<Producto> {
         System.out.println("Nuevo precio de proveedor del producto: ");
         productoUpdate.setPrecio_proveedor(Leer.pedirFloat());
 
-        session.beginTransaction();
-        session.evict(productoUpdate);
         session.update(productoUpdate);
-        session.getTransaction().commit();
+        transaction.commit();
+        System.out.println("Producto Actualizado");
 
-        //transaction.commit();
-        System.out.println("Producto actualizado");
+        // SET GLOBAL FOREIGN_KEY_CHECKS=0; ara las claves foraneas de m******
+        
 
     }
 

@@ -10,6 +10,7 @@ public class HibernateUtil {
     private static Session session;
 
     private HibernateUtil() {
+        
 
     }
 

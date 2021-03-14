@@ -1,7 +1,6 @@
 package Practica2.Practica2.Dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -11,7 +10,6 @@ import Practica2.Practica2.HibernateUtil;
 import Practica2.Practica2.Leer;
 
 public class ClienteDAO implements Dao<Cliente> {
-
 
     Session session;
     Cliente clienteDAO = new Cliente();

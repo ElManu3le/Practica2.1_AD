@@ -26,6 +26,7 @@ public class Detalles {
     private int numlinea;
 
     public Detalles() {
+        
     }
 
     public Detalles(int cod_pedido, String cod_producto, int cantidad, float udcost, int numlinea) {

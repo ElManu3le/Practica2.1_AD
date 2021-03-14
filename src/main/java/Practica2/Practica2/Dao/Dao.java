@@ -1,8 +1,6 @@
 package Practica2.Practica2.Dao;
 
-import java.util.*;
-
-import Practica2.Practica2.Cliente;
+import java.util.List;
 
 public interface Dao<T> {
 

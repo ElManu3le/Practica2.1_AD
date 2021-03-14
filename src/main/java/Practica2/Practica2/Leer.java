@@ -3,8 +3,11 @@ package Practica2.Practica2;
 import java.io.*;
 
 public class Leer {
-    
-    /** el .pediCadena no hara falta hacer un Scanner teclado= new Scanner(Sysmten.in) ya que ya te piede una cadena ó int */
+
+    /**
+     * el .pediCadena no hara falta hacer un Scanner teclado= new
+     * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
+     */
     static public String pedirCadena() {
         BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
         String dato = "";
@@ -22,7 +25,10 @@ public class Leer {
 
     }
 
-    /** el .pediCadena no hara falta hacer un Scanner teclado= new Scanner(Sysmten.in) ya que ya te piede una cadena ó int */
+    /**
+     * el .pediCadena no hara falta hacer un Scanner teclado= new
+     * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
+     */
     static public int pedirEnteroValidar() {
         BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
         int dato = 0;
@@ -44,7 +50,10 @@ public class Leer {
 
     }
 
-    /** el .pediCadena no hara falta hacer un Scanner teclado= new Scanner(Sysmten.in) ya que ya te piede una cadena ó int */
+    /**
+     * el .pediCadena no hara falta hacer un Scanner teclado= new
+     * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
+     */
     static public double pedirDecimal() {
         BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
         double dato = 0;
@@ -66,7 +75,10 @@ public class Leer {
 
     }
 
-    /** el .pediCadena no hara falta hacer un Scanner teclado= new Scanner(Sysmten.in) ya que ya te piede una cadena ó int */
+    /**
+     * el .pediCadena no hara falta hacer un Scanner teclado= new
+     * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
+     */
     static public float pedirFloat() {
         BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
         float dato = 0;

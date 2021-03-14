@@ -1,9 +1,5 @@
 package Practica2.Practica2;
 
-import java.util.List;
-
-import org.hibernate.Session;
-
 import Practica2.Practica2.Dao.ClienteDAO;
 import Practica2.Practica2.Dao.PedidoDAO;
 
@@ -32,6 +28,7 @@ public class App {
             opcion = Leer.pedirEnteroValidar();
 
             switch (opcion) {
+                
             case 1:
 
                 try {

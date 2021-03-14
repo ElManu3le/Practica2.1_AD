@@ -30,6 +30,7 @@ public class Pedido {
     private int codigo_cliente;
 
     public Pedido() {
+        
     }
 
     public Pedido(int codigo_pedido, String fecha_pedido, String fecha_esperada, String fecha_entrega, String estado,

@@ -1,7 +1,6 @@
 package Practica2.Practica2.Dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import Practica2.Practica2.Detalles;
 

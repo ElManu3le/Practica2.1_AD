@@ -195,7 +195,4 @@ public class Cliente {
                 + ", codigoEmpleadoPepVentas=" + codigoEmpleadoPepVentas + ", limiteCredito=" + limiteCredito + '}';
     }
 
-
-    
-
 }

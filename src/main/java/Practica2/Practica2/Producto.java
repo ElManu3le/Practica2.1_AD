@@ -131,7 +131,4 @@ public class Producto {
                 + precio_venta + ", proveedor=" + proveedor + "]";
     }
 
-
-    
-
 }

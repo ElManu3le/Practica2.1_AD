@@ -1,7 +1,6 @@
 package Practica2.Practica2.Dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -24,6 +23,7 @@ public class PedidoDAO implements Dao<Pedido> {
         System.out.println("Cliente founded");
         System.out.println(pedidoDAO);
         return pedidoDAO;
+        
     }
 
     @Override

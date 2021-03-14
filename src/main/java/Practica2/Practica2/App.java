@@ -86,6 +86,7 @@ public class App {
                 break;
             case 5:
                 try {
+
                     mProducto.update(productos);
 
                 } catch (Exception e) {

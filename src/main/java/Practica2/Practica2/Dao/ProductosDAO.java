@@ -39,15 +39,12 @@ public class ProductosDAO implements Dao<Producto> {
 
     @Override
     public void save(Producto t) throws Exception {
-        session = HibernateUtil.geeSession();
+        /*session = HibernateUtil.geeSession();
 
         productoDAO = new Producto();
 
         System.out.println("Codigo del producto");
-        int codigo_producto = Leer.pedirEnteroValidar();/**
-                                                         * el .pediCadena no hara falta hacer un Scanner teclado= new
-                                                         * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
-                                                         */
+        int codigo_producto = Leer.pedirEnteroValidar();
 
         System.out.println("Dime el nombre del producto");
         String nombre_producto = Leer.pedirCadena();
@@ -85,67 +82,75 @@ public class ProductosDAO implements Dao<Producto> {
 
         session.getTransaction().begin();
         session.persist(productoDAO);
-        session.getTransaction().commit();
+        session.getTransaction().commit();*/
 
     }
 
-    
     public void update(Producto productoUpdate) {
         session = HibernateUtil.geeSession();
 
         Transaction transaction = session.beginTransaction();
-		
-		System.out.println("Dime el id del producto para modificarlo");
-		productoUpdate = session.find(Producto.class, Leer.pedirCadena());
-		
-		productoUpdate = session.load(Producto.class, session);
-		
-		// PEDIMOS LOS DATOS PARA ACTUALIZAR EL PRODUCTO
-		System.out.println("Nuevo nombre del producto");
-		productoUpdate.setNombre_producto(Leer.pedirCadena());
-		
-		System.out.println("Nueva gama del producto: ");
-		String nuevaGama = Leer.pedirCadena();
-		if (nuevaGama.equalsIgnoreCase("")) {
-			nuevaGama = productoUpdate.getGama();
-		}
-		productoUpdate.setGama(nuevaGama);
 
-		System.out.println("Nuevas dimensiones del producto: ");
-		String nuevasDimensiones = Leer.pedirCadena();
-		if (nuevasDimensiones.equalsIgnoreCase("")) {
-			nuevasDimensiones = productoUpdate.getDimensiones();
-		}
-		productoUpdate.setDimensiones(nuevasDimensiones);
+        System.out.println("Dime el id del producto para modificarlo");
 
-		System.out.println("Nuevo proveedor del producto: ");
-		String nuevoProveedor = Leer.pedirCadena();
-		if (nuevoProveedor.equalsIgnoreCase("")) {
-			nuevoProveedor = productoUpdate.getProveedor();
-		}
-		productoUpdate.setProveedor(nuevoProveedor);
+        try {
+            productoUpdate = session.find(Producto.class, Leer.pedirCadena());
 
-		System.out.println("Nueva descripcion del producto: ");
-		String nuevaDescripcion = Leer.pedirCadena();
-		if (nuevaDescripcion.equalsIgnoreCase("")) {
-			nuevaDescripcion = productoUpdate.getDescripcion();
-		}
-		productoUpdate.setDescripcion(nuevaDescripcion);
+            System.out.println(productoUpdate.getCodigo_producto());
 
-		System.out.println("Nueva cantidad en stock del producto: ");
-		productoUpdate.setCantidad_en_stock(Leer.pedirEnteroValidar());
+            
 
-		System.out.println("Nuevo precio de venta del producto: ");
-		productoUpdate.setPrecio_venta(Leer.pedirFloat());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
 
-		System.out.println("Nuevo precio de proveedor del producto: ");
-		productoUpdate.setPrecio_proveedor(Leer.pedirFloat());
-		
-		session.update(productoUpdate);
-		transaction.commit();
-		System.out.println("Producto actualizado");
+        productoUpdate = session.load(Producto.class, session);
 
-        
+        // PEDIMOS LOS DATOS PARA ACTUALIZAR EL PRODUCTO
+        System.out.println("Nuevo nombre del producto");
+        productoUpdate.setNombre_producto(Leer.pedirCadena());
+
+        System.out.println("Nueva gama del producto: ");
+        String nuevaGama = Leer.pedirCadena();
+        if (nuevaGama.equalsIgnoreCase("")) {
+            nuevaGama = productoUpdate.getGama();
+        }
+        productoUpdate.setGama(nuevaGama);
+
+        System.out.println("Nuevas dimensiones del producto: ");
+        String nuevasDimensiones = Leer.pedirCadena();
+        if (nuevasDimensiones.equalsIgnoreCase("")) {
+            nuevasDimensiones = productoUpdate.getDimensiones();
+        }
+        productoUpdate.setDimensiones(nuevasDimensiones);
+
+        System.out.println("Nuevo proveedor del producto: ");
+        String nuevoProveedor = Leer.pedirCadena();
+        if (nuevoProveedor.equalsIgnoreCase("")) {
+            nuevoProveedor = productoUpdate.getProveedor();
+        }
+        productoUpdate.setProveedor(nuevoProveedor);
+
+        System.out.println("Nueva descripcion del producto: ");
+        String nuevaDescripcion = Leer.pedirCadena();
+        if (nuevaDescripcion.equalsIgnoreCase("")) {
+            nuevaDescripcion = productoUpdate.getDescripcion();
+        }
+        productoUpdate.setDescripcion(nuevaDescripcion);
+
+        System.out.println("Nueva cantidad en stock del producto: ");
+        productoUpdate.setCantidad_en_stock(Leer.pedirEnteroValidar());
+
+        System.out.println("Nuevo precio de venta del producto: ");
+        productoUpdate.setPrecio_venta(Leer.pedirFloat());
+
+        System.out.println("Nuevo precio de proveedor del producto: ");
+        productoUpdate.setPrecio_proveedor(Leer.pedirFloat());
+
+        session.update(productoUpdate);
+        transaction.commit();
+        System.out.println("Producto actualizado");
 
     }
 
@@ -158,7 +163,7 @@ public class ProductosDAO implements Dao<Producto> {
     @Override
     public void update(Producto t, String[] params) {
         // TODO Auto-generated method stub
-        
+
     }
 
 }

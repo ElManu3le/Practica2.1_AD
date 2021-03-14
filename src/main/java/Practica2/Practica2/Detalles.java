@@ -14,7 +14,7 @@ public class Detalles {
     private int cod_pedido;
 
     @Column(name = "codigo_producto")
-    private String cod_producto;
+    private int cod_producto;
 
     @Column(name = "cantidad")
     private int cantidad;
@@ -29,7 +29,7 @@ public class Detalles {
         
     }
 
-    public Detalles(int cod_pedido, String cod_producto, int cantidad, float udcost, int numlinea) {
+    public Detalles(int cod_pedido, int cod_producto, int cantidad, float udcost, int numlinea) {
         this.cod_pedido = cod_pedido;
         this.cod_producto = cod_producto;
         this.cantidad = cantidad;
@@ -51,11 +51,11 @@ public class Detalles {
         this.cod_pedido = cod_pedido;
     }
 
-    public String getCod_producto() {
+    public int getCod_producto() {
         return cod_producto;
     }
 
-    public void setCod_producto(String cod_producto) {
+    public void setCod_producto(int cod_producto) {
         this.cod_producto = cod_producto;
     }
 

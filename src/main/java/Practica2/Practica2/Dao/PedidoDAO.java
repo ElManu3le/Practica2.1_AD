@@ -23,7 +23,7 @@ public class PedidoDAO implements Dao<Pedido> {
         System.out.println("Cliente founded");
         System.out.println(pedidoDAO);
         return pedidoDAO;
-        
+
     }
 
     @Override
@@ -31,8 +31,8 @@ public class PedidoDAO implements Dao<Pedido> {
         session = HibernateUtil.geeSession();
         Query q = session.createQuery("select e from Cliente e order by nombre_cliente");
         List<Pedido> todosLosPedidos = q.getResultList();
-        for (Pedido cliente : todosLosPedidos) {
-            System.out.println(cliente);
+        for (Pedido pedido : todosLosPedidos) {
+            System.out.println(pedido);
         }
         return todosLosPedidos;
     }
@@ -45,26 +45,26 @@ public class PedidoDAO implements Dao<Pedido> {
 
         System.out.println("Codigo de pedido nuevo");
         int codigo_pedido = Leer.pedirEnteroValidar();/**
-                                                        * el .pediCadena no hara falta hacer un Scanner teclado= new
-                                                        * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
-                                                        */
+                                                       * el .pediCadena no hara falta hacer un Scanner teclado= new
+                                                       * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
+                                                       */
 
-        System.out.println("Dime el nombre del nuevo cliente");
+        System.out.println("Dime la fecha del pedido");
         String fecha_pedido = Leer.pedirCadena();
 
-        System.out.println("Dime el nombre del nuevo contacto");
+        System.out.println("Dime la fecha esperada");
         String fecha_esperada = Leer.pedirCadena();
 
-        System.out.println("Dime el apllido del nuevo contacto");
+        System.out.println("Dime la fecha de entrega");
         String fecha_entrega = Leer.pedirCadena();
 
-        System.out.println("Dime el telefono");
+        System.out.println("Dime el estado");
         String estado = Leer.pedirCadena();
 
-        System.out.println("Dime el fax");
+        System.out.println("Dime los comentarios");
         String comentarios = Leer.pedirCadena();
 
-        System.out.println("Dime la dirreción del cliente");
+        System.out.println("Dime el codigo dee cliente");
         int codigo_cliente = Leer.pedirEnteroValidar();
 
         pedidoDAO.setCodigo_cliente(codigo_cliente);
@@ -74,25 +74,23 @@ public class PedidoDAO implements Dao<Pedido> {
         pedidoDAO.setFecha_entrega(fecha_entrega);
         pedidoDAO.setComentarios(comentarios);
         pedidoDAO.setEstado(estado);
-        
 
         session.getTransaction().begin();
         session.persist(pedidoDAO);
         session.getTransaction().commit();
 
-        
     }
 
     @Override
     public void update(Pedido t, String[] params) {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
     public void delete(Pedido t) {
         // TODO Auto-generated method stub
-        
+
     }
-    
+
 }

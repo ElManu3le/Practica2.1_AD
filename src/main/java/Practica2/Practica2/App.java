@@ -1,7 +1,9 @@
 package Practica2.Practica2;
 
 import Practica2.Practica2.Dao.ClienteDAO;
+import Practica2.Practica2.Dao.DetallesDAO;
 import Practica2.Practica2.Dao.PedidoDAO;
+import Practica2.Practica2.Dao.ProductosDAO;
 
 public class App {
 
@@ -19,6 +21,12 @@ public class App {
         PedidoDAO mPedido = new PedidoDAO();
         Pedido pedido = new Pedido();
 
+        DetallesDAO mDetalles = new DetallesDAO();
+        Detalles detalles = new Detalles();
+
+        ProductosDAO mProducto = new ProductosDAO();
+        Producto productos = new Producto();
+
         int opcion = 0;
 
         do {
@@ -28,7 +36,7 @@ public class App {
             opcion = Leer.pedirEnteroValidar();
 
             switch (opcion) {
-                
+
             case 1:
 
                 try {
@@ -67,6 +75,15 @@ public class App {
             case 5:
                 break;
             case 6:
+
+                try {
+                    mDetalles.getAll();
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                    System.out.println(e.getMessage());
+
+                }
                 break;
 
             default:

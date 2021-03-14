@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Producto {
     @Id
     @Column(name = "codigo_producto")
-    private String codigo_producto;
+    private int codigo_producto;
 
     @Column(name = "nombre")
     private String nombre_producto;
@@ -30,16 +30,16 @@ public class Producto {
     private int cantidad_en_stock;
 
     @Column(name = "precio_venta")
-    private int precio_venta;
+    private float precio_venta;
 
     @Column(name = "precio_proveedor")
-    private int precio_proveedor;
+    private float precio_proveedor;
 
     public Producto() {
     }
 
-    public Producto(String codigo_producto, String nombre_producto, String gama, String dimensiones, String proveedor,
-            String descripcion, int cantidad_en_stock, int precio_venta, int precio_proveedor) {
+    public Producto(int codigo_producto, String nombre_producto, String gama, String dimensiones, String proveedor,
+            String descripcion, int cantidad_en_stock, float precio_venta, float precio_proveedor) {
         this.codigo_producto = codigo_producto;
         this.nombre_producto = nombre_producto;
         this.gama = gama;
@@ -51,11 +51,11 @@ public class Producto {
         this.precio_proveedor = precio_proveedor;
     }
 
-    public String getCodigo_producto() {
+    public int getCodigo_producto() {
         return codigo_producto;
     }
 
-    public void setCodigo_producto(String codigo_producto) {
+    public void setCodigo_producto(int codigo_producto) {
         this.codigo_producto = codigo_producto;
     }
 
@@ -107,19 +107,19 @@ public class Producto {
         this.cantidad_en_stock = cantidad_en_stock;
     }
 
-    public int getPrecio_venta() {
+    public float getPrecio_venta() {
         return precio_venta;
     }
 
-    public void setPrecio_venta(int precio_venta) {
+    public void setPrecio_venta(float precio_venta) {
         this.precio_venta = precio_venta;
     }
 
-    public int getPrecio_proveedor() {
+    public float getPrecio_proveedor() {
         return precio_proveedor;
     }
 
-    public void setPrecio_proveedor(int precio_proveedor) {
+    public void setPrecio_proveedor(float precio_proveedor) {
         this.precio_proveedor = precio_proveedor;
     }
 

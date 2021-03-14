@@ -98,6 +98,22 @@ public class ClienteDAO implements Dao<Cliente> {
 
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public List<Cliente> buscar() {
+		session = HibernateUtil.geeSession();
+		System.out.println("Dime el nombre, el contacto o el apellido del cliente");
+		String busqueda = Leer.pedirCadena();
+		Query q = session.createQuery(
+				"select e from Cliente e where nombre_cliente = '" + busqueda + "'" + " or nombre_contacto = '"
+						+ busqueda + "' or apellido_contacto = '" + busqueda + "' order by nombre_cliente");
+		List<Cliente> todosLosClientes = q.getResultList();
+		for (Cliente cliente : todosLosClientes) {
+			System.out.println(cliente);
+		}
+		return todosLosClientes;
+	}
+    
+
     @Override
     public void update(Cliente t, String[] params) {
 

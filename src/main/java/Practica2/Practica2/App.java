@@ -54,7 +54,7 @@ public class App {
                 try {
                     mCliente.getAll();
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
+
                     e.printStackTrace();
                     System.out.println(e.getMessage());
 
@@ -65,21 +65,40 @@ public class App {
             case 3:
                 try {
 
+                    mCliente.get(opcion);
+
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    e.printStackTrace();
+                    System.out.println(e.getMessage());
                 }
 
                 break;
             case 4:
+
+                try {
+                    mCliente.buscar();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println(e.getMessage());
+                }
+
                 break;
             case 5:
+                try {
+                    mProducto.update(productos);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println(e.getMessage());
+                }
+
                 break;
             case 6:
 
                 try {
                     mDetalles.getAll();
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                     System.out.println(e.getMessage());
 

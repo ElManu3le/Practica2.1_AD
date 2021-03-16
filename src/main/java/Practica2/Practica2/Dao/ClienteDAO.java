@@ -42,13 +42,11 @@ public class ClienteDAO implements Dao<Cliente> {
     public void save(Cliente t) throws Exception {
         session = HibernateUtil.geeSession();
 
-        clienteDAO = new Cliente();
+        //clienteDAO = new Cliente();
 
-        System.out.println("Codigo de cliente nuevo");
-        int codigo_cliente = Leer.pedirEnteroValidar();/**
-                                                        * el .pediCadena no hara falta hacer un Scanner teclado= new
-                                                        * Scanner(Sysmten.in) ya que ya te piede una cadena ó int
-                                                        */
+       
+        /*System.out.println("Codigo de cliente nuevo");
+        int codigo_cliente = Leer.pedirEnteroValidar();
 
         System.out.println("Dime el nombre del nuevo cliente");
         String nombre_cliente = Leer.pedirCadena();
@@ -78,7 +76,7 @@ public class ClienteDAO implements Dao<Cliente> {
         String pais = Leer.pedirCadena();
 
         System.out.println("Dime el codigo postal cliente");
-        String codigo_postal = Leer.pedirCadena();
+        String codigo_postal = Leer.pedirCadena(); 
 
         clienteDAO.setCodigoCliente(codigo_cliente);
         clienteDAO.setNombreCliente(nombre_cliente);
@@ -90,7 +88,7 @@ public class ClienteDAO implements Dao<Cliente> {
         clienteDAO.setCiudad(ciudad);
         clienteDAO.setRegion(region);
         clienteDAO.setPais(pais);
-        clienteDAO.setCodigoPostal(codigo_postal);
+        clienteDAO.setCodigoPostal(codigo_postal); */
 
         session.getTransaction().begin();
         session.persist(clienteDAO);

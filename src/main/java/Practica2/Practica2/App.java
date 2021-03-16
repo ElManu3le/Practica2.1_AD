@@ -121,8 +121,12 @@ public class App {
                 + "3. Mostrar a un cliente (Use client_ID) \n"
                 + "4. Buscar a un cliente (Introducir cadena para nombreCli,nombreCont,apellCont) \n"
                 + "5. Editar un producto (Introduce producto ID) \n" + "6. Mostrar todos lo detalles de los pedidos \n"
-                + "7.  \n" + "8. \n" + "9. \n" + "10. \n");
+                );
 
     }
+
+    
+
+
 
 }

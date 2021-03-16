@@ -19,11 +19,12 @@
       </property>
 
       <property name="hibernate.connection.username">
-         root
+         admin
       </property>
 
       <property name="hibernate.connection.password">
-         gt2rsmanuel620
+         4DM1n4DM1n
+          
       </property>
 
       <!-- List of XML mapping files -->

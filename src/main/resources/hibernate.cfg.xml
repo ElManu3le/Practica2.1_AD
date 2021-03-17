@@ -20,12 +20,12 @@
 
       <property name="hibernate.connection.username">
          <!-- root -->
-         admin
+         root
       </property>
 
       <property name="hibernate.connection.password">
          <!-- gt2rsmanuel620 -->
-         4DM1n4DM1n
+         gt2rsmanuel620
           
       </property>
 

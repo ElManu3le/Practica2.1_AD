@@ -46,10 +46,10 @@ public class Cliente {
     private String codigoPostal;
 
     @Column(name = "codigo_empleado_rep_ventas")
-    private Integer codigoEmpleadoPepVentas;
+    private String codigoEmpleadoPepVentas;
 
     @Column(name = "limite_credito")
-    private BigDecimal limiteCredito;
+    private Integer limiteCredito;
 
     public Integer getCodigoCliente() {
         return codigoCliente;
@@ -60,7 +60,7 @@ public class Cliente {
 
     public Cliente(Integer codigoCliente, String nombreCliente, String nombreContacto, String apellidoContacto,
             String telefono, String fax, String lineaDireccion1, String lineaDireccion2, String ciudad, String region,
-            String pais, String codigoPostal, Integer codigoEmpleadoPepVentas, BigDecimal limiteCredito) {
+            String pais, String codigoPostal, String codigoEmpleadoPepVentas) {
         this.codigoCliente = codigoCliente;
         this.nombreCliente = nombreCliente;
         this.nombreContacto = nombreContacto;
@@ -169,19 +169,19 @@ public class Cliente {
         this.codigoPostal = codigoPostal;
     }
 
-    public Integer getCodigoEmpleadoPepVentas() {
+    public String getCodigoEmpleadoPepVentas() {
         return codigoEmpleadoPepVentas;
     }
 
-    public void setCodigoEmpleadoPepVentas(Integer codigoEmpleadoPepVentas) {
+    public void setCodigoEmpleadoPepVentas(String codigoEmpleadoPepVentas) {
         this.codigoEmpleadoPepVentas = codigoEmpleadoPepVentas;
     }
 
-    public BigDecimal getLimiteCredito() {
+    public Integer getLimiteCredito() {
         return limiteCredito;
     }
 
-    public void setLimiteCredito(BigDecimal limiteCredito) {
+    public void setLimiteCredito(Integer limiteCredito) {
         this.limiteCredito = limiteCredito;
     }
 

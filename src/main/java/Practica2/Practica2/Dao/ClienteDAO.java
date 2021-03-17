@@ -91,7 +91,7 @@ public class ClienteDAO implements Dao<Cliente> {
         clienteDAO.setCodigoPostal(codigo_postal); */
 
         session.getTransaction().begin();
-        session.persist(clienteDAO);
+        session.persist(t);
         session.getTransaction().commit();
 
     }

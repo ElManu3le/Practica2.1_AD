@@ -42,9 +42,9 @@ public class App {
                 try {
 
                     cliente = guardarDatos();
-                    mCliente.save(cliente); 
+                    mCliente.save(cliente);
 
-                    //mCliente.save(cliente);
+                    // mCliente.save(cliente);
                 } catch (Exception e) {
 
                     e.printStackTrace();
@@ -128,7 +128,7 @@ public class App {
 
     }
 
-    private static Cliente guardarDatos(){
+    private static Cliente guardarDatos() {
 
         System.out.println("Codigo de cliente nuevo");
         int codigo_cliente = Leer.pedirEnteroValidar();
@@ -161,7 +161,7 @@ public class App {
         String pais = Leer.pedirCadena();
 
         System.out.println("Dime el codigo postal cliente");
-        String codigo_postal = Leer.pedirCadena(); 
+        String codigo_postal = Leer.pedirCadena();
 
         System.out.println("Dime el pais del cliente");
         String codigoEmpleadoPepVentas = Leer.pedirCadena();
@@ -171,45 +171,8 @@ public class App {
 
         Cliente cliente;
 
-        return new Cliente(codigo_cliente, nombre_cliente, nombre_contacto, apellido_contacto,
-         telefono, fax, direccion1, ciudad, region, pais, codigo_postal, codigoEmpleadoPepVentas, limiteCredito);
-       
-            /*cliente = new Cliente(codigo_cliente, nombre_cliente, nombre_contacto, 
-            apellido_contacto, telefono, fax, 
-            direccion1, ciudad, region, 
-            pais, codigo_postal, codigoEmpleadoPepVentas, limiteCredito);
-
-            cliente.setCodigoCliente(codigo_cliente);
-            cliente.setNombreCliente(nombre_cliente);
-            cliente.setNombreContacto(nombre_contacto);
-            cliente.setApellidoContacto(apellido_contacto);
-            cliente.setTelefono(telefono);
-            cliente.setFax(fax);
-            cliente.setLineaDireccion1(direccion1);
-            cliente.setCiudad(ciudad);
-            cliente.setRegion(region);
-            cliente.setPais(pais);
-            cliente.setCodigoPostal(codigo_postal);*/
-
-
-
-            
-
-            
-
-        
-
-        /*clienteDAO.setCodigoCliente(codigo_cliente);
-        clienteDAO.setNombreCliente(nombre_cliente);
-        clienteDAO.setNombreContacto(nombre_contacto);
-        clienteDAO.setApellidoContacto(apellido_contacto);
-        clienteDAO.setTelefono(telefono);
-        clienteDAO.setFax(fax);
-        clienteDAO.setLineaDireccion1(direccion1);
-        clienteDAO.setCiudad(ciudad);
-        clienteDAO.setRegion(region);
-        clienteDAO.setPais(pais);
-        clienteDAO.setCodigoPostal(codigo_postal); */
+        return new Cliente(codigo_cliente, nombre_cliente, nombre_contacto, apellido_contacto, telefono, fax,
+                direccion1, ciudad, region, pais, codigo_postal, codigoEmpleadoPepVentas, limiteCredito);
 
     }
 
